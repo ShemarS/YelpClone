@@ -44,7 +44,39 @@ class MainActivity : AppCompatActivity() {
         val yelpAPI = retrofit.create(YelpFusion::class.java)
 
 
-        fun onSearchClick()
+
+
+        yelpAPI.searchRestaurants("Bearer $API_KEY", "pizza"," New Britain").enqueue(object : Callback<BusinessData>{
+
+                override fun onFailure(call: Call<BusinessData>, t: Throwable) {
+                    Log.d(TAG, "onFailure : $t")
+                }
+
+                override fun onResponse(call: Call<BusinessData>, response: Response<BusinessData>) {
+                    Log.d(TAG, "onResponse: $response")
+
+                    val body = response.body()
+
+                    if (body == null){
+                        Log.w(TAG, "Valid response was not received")
+                        return
+                    }
+
+                    // The following log messages are just for testing purpose
+                    Log.d(TAG, ": ${body.businesses.get(0).name}")
+                    Log.d(TAG, ": ${body.businesses.get(0).location.address1}")
+                    Log.d(TAG, ": ${body.businesses.get(0).rating}")
+                    Log.d(TAG, ": ${body.businesses.get(0).distance}")
+                    Log.d(TAG, ": ${body.businesses.get(0).image_url}")
+
+                    // Update the adapter with the new data
+                    restaurantList.addAll(body.businesses)
+                    adapter.notifyDataSetChanged()
+                }
+
+            })
+
+
 
     }
 

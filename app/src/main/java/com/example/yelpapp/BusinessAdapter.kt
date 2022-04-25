@@ -38,8 +38,8 @@ class BusinessAdapter(private val businesses: ArrayList<Businesses>) : RecyclerV
         // - replace the contents of the view with that element
         val currentItem = businesses[position]
         holder.name.text = "${currentItem.name} "
-        holder.address.text = currentItem.location.address
-        holder.foodType.text = currentItem.categories.title
+        holder.address.text = currentItem.location.address1
+        holder.foodType.text = currentItem.categories[position].title
         holder.reviews.text = currentItem.reviewCount.toString()
         holder.distance.text = currentItem.distance.toString()
         holder.price.text = currentItem.price
@@ -51,9 +51,8 @@ class BusinessAdapter(private val businesses: ArrayList<Businesses>) : RecyclerV
 
         // Load the image from the url using Glide library
         Glide.with(context)
-            .load(currentItem.imageUrl.medium)
+            .load(currentItem.image_url)
             .placeholder(R.drawable.ic_baseline_food_bank_24) // In case the image is not loaded show this placeholder image
-            .circleCrop() // optional - Circle image with rounded corners
             .into(holder.businessImg)
 
     }

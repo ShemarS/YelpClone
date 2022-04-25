@@ -3,31 +3,26 @@ package com.example.yelpapp
 import com.google.gson.annotations.SerializedName
 
 data class BusinessData(
+    val total: Int,
     val businesses: List<Businesses>
 )
 
 data class Businesses(
     val rating: Float,
     val price: String,
-    val categories: Categories,
+    val categories: List<Categories>,
     val reviewCount: Int,
     val name: String,
-    val location: Locations,
+    val image_url: String,
+    val location: Location,
     val distance: Float,
 
-    // If you want to give a different variable name (different than what is in the received data),
-    // you need to use @SerializedName, otherwise you can simply give the same variable name
-    @SerializedName("picture") val imageUrl: Picture
 )
 
-data class Locations (
-    val address: String
+data class Location (
+    val address1: String
 )
 
 data class Categories (
     val title: String
-)
-
-data class Picture(
-    val medium: String
 )
