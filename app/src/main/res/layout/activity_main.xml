@@ -18,13 +18,14 @@
 
     <EditText
         android:id="@+id/editTextSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="406dp"
+        android:layout_height="38dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Search for Food"
         android:inputType="textPersonName"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextLocation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,6 +39,7 @@
         android:ems="10"
         android:hint="Enter a location such as New Britain"
         android:inputType="textPersonName"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toStartOf="@+id/searchButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="1dp"
+        android:onClick="onSearchClick"
         android:text="Search"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
