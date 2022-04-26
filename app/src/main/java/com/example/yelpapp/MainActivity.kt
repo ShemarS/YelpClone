@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             }
             searchLocation.isEmpty() -> {
                 showLocationAlert()
+                return
             }
         }
 
@@ -95,14 +96,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<BusinessData>, response: Response<BusinessData>) {
-                    Log.d(TAG, "onResponse: $response")
-
-                    val body = response.body()
-
-                    if (body == null){
-                        Log.w(TAG, "Valid response was not received")
-                        return
-                    }
+                    val body = response.body() ?: return
                     restaurantList.addAll(body.businesses)
                     adapter.notifyDataSetChanged()
                 }

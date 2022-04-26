@@ -21,9 +21,6 @@ class BusinessAdapter(private val businesses: ArrayList<Businesses>) : RecyclerV
         return "$miles mi"
     }
 
-    private fun convertReview(value: Int): String {
-        return "$value Reviews"
-    }
 
     inner class MyViewHolder (itemView: View): RecyclerView.ViewHolder (itemView){
         val name = itemView.findViewById<TextView>(R.id.textViewName)
@@ -48,7 +45,7 @@ class BusinessAdapter(private val businesses: ArrayList<Businesses>) : RecyclerV
         holder.name.text = currentItem.name
         holder.address.text = currentItem.location.address1
         holder.foodType.text = currentItem.categories[0].title
-        holder.reviews.text = convertReview(currentItem.review_count)
+        holder.reviews.text = "${currentItem.review_count} Reviews"
         holder.distance.text = convertToMiles(currentItem.distance)
         holder.price.text = currentItem.price
         holder.ratingBar.progress = (currentItem.rating*2).toInt()
