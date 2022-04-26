@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/ratingBar"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar"
         tools:text="952 Farmington Ave" />
@@ -24,7 +24,7 @@
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/darker_gray"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/textViewAddress"
         app:layout_constraintTop_toBottomOf="@+id/textViewAddress"
         tools:text="Pizza" />
@@ -37,7 +37,7 @@
         android:layout_marginTop="1dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#88171515"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
@@ -63,7 +63,7 @@
         android:layout_marginStart="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@android:color/darker_gray"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
         app:layout_constraintStart_toEndOf="@+id/ratingBar"
         tools:text="14 reviews" />
@@ -72,7 +72,7 @@
         android:id="@+id/textViewDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="24dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
@@ -86,6 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewDistance"
         app:layout_constraintTop_toBottomOf="@+id/textViewDistance"
         tools:text="$$" />
